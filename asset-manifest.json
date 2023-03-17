@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/rquote/static/css/main.50281000.css",
+    "main.css": "/rquote/static/css/main.617cea03.css",
     "main.js": "/rquote/static/js/main.ed4f2beb.js",
     "index.html": "/rquote/index.html",
-    "main.50281000.css.map": "/rquote/static/css/main.50281000.css.map",
+    "main.617cea03.css.map": "/rquote/static/css/main.617cea03.css.map",
     "main.ed4f2beb.js.map": "/rquote/static/js/main.ed4f2beb.js.map"
   },
   "entrypoints": [
-    "static/css/main.50281000.css",
+    "static/css/main.617cea03.css",
     "static/js/main.ed4f2beb.js"
   ]
 }
