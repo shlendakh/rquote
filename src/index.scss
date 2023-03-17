@@ -1,3 +1,8 @@
+$col2: #635985;
+$col1: #443C68;
+$col3: #393053;
+$col4: #18122B;
+
 html {
   margin: 0;
   padding: 0;
@@ -5,6 +10,7 @@ html {
 }
 
 /* Styling Page */
+
 body {
   margin: 0;
   padding: 0;
@@ -12,12 +18,12 @@ body {
   height: 100%;
   max-height: 100%;
   float: left;
-  background-color: #443C68;
+  background-color: $col1;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
 }
 
@@ -27,7 +33,7 @@ body {
   justify-content: space-between;
   width: 60vw;
   height: 70vh;
-  background-color: #635985;
+  background-color: $col2;
   border-radius: 25px;
 }
 
@@ -50,16 +56,17 @@ body {
 
 #text {
   font-size: 2em;
-  color: #18122B;
+  color: $col4;
   text-align: center;
 }
 
 #author {
   font-size: 1.6em;
-  color: #393053;
+  color: $col3;
 }
 
 /* Nav */
+
 #nav {
   display: flex;
   flex-direction: row;
@@ -86,9 +93,10 @@ body {
 }
 
 /* Button */
+
 #new-quote {
-  background-color: #393053;
-  color: #18122B;
+  background-color: $col3;
+  color: $col4;
   border: none;
   height: 50px;
   width: 200px;
@@ -98,8 +106,8 @@ body {
 }
 
 #new-quote:hover {
-  background-color: #18122B;
-  color: #393053;
+  background-color: $col4;
+  color: $col3;
 }
 
 #new-quote:active {
@@ -108,17 +116,18 @@ body {
 }
 
 /* Font Awesome Icons */
+
 .quote-ico {
-  color: #393053;
+  color: $col3;
 }
 
 .share-ico {
-  color: #393053;
+  color: $col3;
   font-size: 30px;
 }
 
 .share-ico:hover {
-  color: #18122B;
+  color: $col4;
 }
 
 @media (max-width: 1050px) {
@@ -126,15 +135,18 @@ body {
     font-size: 14px;
   }
 }
+
 @media (max-width: 768px) {
   #quote {
     font-size: 12px;
   }
+
   #nav {
     flex-direction: column;
     justify-content: space-between;
   }
+
   #button-div {
     flex: 2;
   }
-}/*# sourceMappingURL=index.css.map */
+}

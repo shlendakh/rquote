@@ -1,25 +1,115 @@
-import logo from './logo.svg';
-import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, brands } from '@fortawesome/fontawesome-svg-core/import.macro';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+async function getQuote() {
+  const response = await fetch("https://api.quotable.io/random?maxLength=140");
+
+  const { statusCode, statusMessage, ...data } = await response.json();
+
+  if (response.ok) {
+      const obj = {
+        quote: '',
+        author: ''
+      };
+
+      obj.quote = data.content;
+      obj.author = data.author;
+      return obj;
+    } else {
+      return {
+          quote: "An error occured",
+          author: "An error occured"
+      };
+    }
+}
+
+class Share extends React.Component {
+
+  openInNewTab = (url) => {
+    window.open(url, "noopener,noreferrer");
+  }
+
+  render() {
+    const text = ''
+      .concat(this.props.text)
+      .replace(/[\s]/g, '%20')
+      .replace(/[.]/g, '%2E')
+      .replace(/[,]/g, '%2C')
+      .replace(/[^a-zA-Z0-9%-]/g, '');
+
+      const author = ''
+      .concat(this.props.author)
+      .replace(/[\s]/g, '%20')
+      .replace(/[.]/g, '%2E')
+      .replace(/[,]/g, '%2C')
+      .replace(/[^a-zA-Z0-9%-]/g, '');
+
+    const twitterLink = "https://twitter.com/intent/tweet?hashtags=fcc&text=" + text + " ~" + author;
+
+    return (
+      <div id="share">
+        <a id="tweet-quote" href="#top" onClick={() => this.openInNewTab(twitterLink)}>
+          <FontAwesomeIcon icon={brands('twitter-square')} className="share-ico" />
         </a>
-      </header>
+        <a id="facebook-quote" href="#top" rel="noopener,noreferrer" >
+          <FontAwesomeIcon icon={brands('facebook-square')} className="share-ico" />
+        </a>
+        <a id="li-quote" href="#top" rel="noopener,noreferrer" >
+          <FontAwesomeIcon icon={brands('linkedin')} className="share-ico" />
+        </a>
     </div>
-  );
+    );
+  }
+}
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      quote: '',
+      author: ''
+    };
+  }
+
+  componentDidMount = () => {
+    getQuote().then((obj) => {
+      this.setState({
+        quote: obj.quote,
+        author: obj.author
+      });
+    });
+  }
+
+  updateQuote = () => {
+    getQuote().then((obj) => {
+      this.setState({
+        quote: obj.quote,
+        author: obj.author
+      });
+    });
+  }
+
+  render() {
+    return(
+      <div>
+        <div id="quote-box">
+          <div id="quote">
+            <p id="text"><FontAwesomeIcon icon={solid('quote-left')} className="quote-ico" /> {this.state.quote}</p>
+            <p id="author">— {this.state.author}</p>
+          </div>
+          <div id="nav">
+            <Share text={this.state.quote} author={this.state.author} />
+            <div id="button-div">
+              <button id="new-quote" onClick={this.updateQuote}>random quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
 }
 
 export default App;
