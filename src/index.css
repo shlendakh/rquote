@@ -160,7 +160,7 @@ body {
 }
 @media (max-width: 768px) {
   #quote-box {
-    width: 70vw;
+    width: 80vw;
   }
   #quote {
     font-size: 12px;
