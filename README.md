@@ -1,11 +1,19 @@
 # Randome Quote Machine
 
-One of many apps I create during class on Freecodecamp courses
+App for random quote.
 
-More info about FreecodeCamp [here](https://www.freecodecamp.org/)
+One of many apps I create during class on Freecodecamp courses. More info about FreecodeCamp [here](https://www.freecodecamp.org/)
+
+## Usage
+
+[Click me](https://shlendakh.github.io/rquote/)
 
 ## License & copyrights
 
-Copyrights (c) 2023 Paweł Szlendak https://github.com/shlendakh/
+Random Quote Machine:
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Copyrights (c) 2023 [Paweł Szlendak](https://github.com/shlendakh/)
+License: [MIT](https://choosealicense.com/licenses/mit/)
+
+I use Quotable API for this app:
+Copyright © 2019 [Luke Peavey](https://github.com/lukePeavey/)

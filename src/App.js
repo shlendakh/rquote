@@ -1,3 +1,13 @@
+/*
+  Random Quote App
+  Created by shlendahh (c) 2023
+  https://github.com/shlendakh/
+  License: MIT (feel free to use)
+
+  Using Quotable API by lukePeavey (c) 2019
+  https://github.com/lukePeavey/quotable
+*/
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid, brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 import React from 'react';
@@ -30,26 +40,23 @@ class Share extends React.Component {
     window.open(url, "noopener,noreferrer");
   }
 
+  textToURL = (str) => {
+      return (
+      ''.concat(str)
+      .replace(/[\s]/g, '%20')
+      .replace(/[.]/g, '%2E')
+      .replace(/[,]/g, '%2C')
+      .replace(/[^a-zA-Z0-9%-]/g, '')
+      )
+  }
+
   render() {
-    const text = ''
-      .concat(this.props.text)
-      .replace(/[\s]/g, '%20')
-      .replace(/[.]/g, '%2E')
-      .replace(/[,]/g, '%2C')
-      .replace(/[^a-zA-Z0-9%-]/g, '');
 
-      const author = ''
-      .concat(this.props.author)
-      .replace(/[\s]/g, '%20')
-      .replace(/[.]/g, '%2E')
-      .replace(/[,]/g, '%2C')
-      .replace(/[^a-zA-Z0-9%-]/g, '');
-
-    const twitterLink = "https://twitter.com/intent/tweet?hashtags=fcc&text=" + text + " ~" + author;
+    const twitterLink = "https://twitter.com/intent/tweet?hashtags=fcc&text=" + this.textToURL(this.props.text) + " ~" + this.textToURL(this.props.author);
 
     return (
       <div id="share">
-        <a id="tweet-quote" href="#top" onClick={() => this.openInNewTab(twitterLink)}>
+        <a id="tweet-quote" href={twitterLink} onClick={() => this.openInNewTab(twitterLink)}>
           <FontAwesomeIcon icon={brands('twitter-square')} className="share-ico" />
         </a>
         <a id="facebook-quote" href="#top" rel="noopener,noreferrer" >

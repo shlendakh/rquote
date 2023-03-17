@@ -1,3 +1,14 @@
+/*
+  Random Quote App
+  Created by shlendahh (c) 2023
+  https://github.com/shlendakh/
+  License: MIT (feel free to use)
+
+  Using Quotable API by lukePeavey (c) 2019
+  https://github.com/lukePeavey/quotable
+*/
+
+
 $col2: #635985;
 $col1: #443C68;
 $col3: #393053;
@@ -7,6 +18,27 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+/* Copyrights */
+#copyrights {
+  position: absolute;
+  color: $col2;
+  bottom: 0;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+}
+
+#copyrights p {
+  text-align: center;
+  font-size: 14px;
+}
+
+#copyrights a {
+  color: $col4;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 /* Styling Page */
@@ -25,6 +57,7 @@ body {
   flex-direction: row;
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
+  position: relative;
 }
 
 #quote-box {
@@ -103,6 +136,7 @@ body {
   border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 #new-quote:hover {
@@ -137,6 +171,12 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  #quote-box {
+    width: 70vw;
+    height: 80vh;
+  }
+
   #quote {
     font-size: 12px;
   }
@@ -148,5 +188,13 @@ body {
 
   #button-div {
     flex: 2;
+  }
+
+  #copyrights p {
+    font-size: 12px;
+  }
+
+  #copyrights {
+    width: 70vw;
   }
 }
