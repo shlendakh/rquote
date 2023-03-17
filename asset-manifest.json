@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rquote/static/css/main.47f8b567.css",
+    "main.js": "/rquote/static/js/main.8898a95c.js",
+    "index.html": "/rquote/index.html",
+    "main.47f8b567.css.map": "/rquote/static/css/main.47f8b567.css.map",
+    "main.8898a95c.js.map": "/rquote/static/js/main.8898a95c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47f8b567.css",
+    "static/js/main.8898a95c.js"
+  ]
+}
