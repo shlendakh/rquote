@@ -56,7 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 60vw;
+  width: 70vw;
   height: 70vh;
   background-color: #635985;
   border-radius: 25px;
@@ -176,6 +176,6 @@ body {
     font-size: 12px;
   }
   #copyrights {
-    width: 70vw;
+    width: 80vw;
   }
 }/*# sourceMappingURL=index.css.map */
